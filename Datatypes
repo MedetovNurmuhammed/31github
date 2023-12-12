@@ -1,0 +1,45 @@
+interface PrimitiveOperations {
+    int add(int a, int b);
+
+    double multiply(double a, double b);
+
+    boolean isEqual(int a, int b);
+
+    char toUpperCase(char ch);
+}
+
+class PrimitiveOperationsImpl implements PrimitiveOperations {
+    @Override
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    @Override
+    public double multiply(double a, double b) {
+        return a * b;
+    }
+
+    @Override
+    public boolean isEqual(int a, int b) {
+        return a == b;
+    }
+
+    @Override
+    public char toUpperCase(char ch) {
+        return Character.toUpperCase(ch);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        PrimitiveOperationsImpl operations = new PrimitiveOperationsImpl();
+        int sum = operations.add(5, 3);
+        double product = operations.multiply(2.5, 4.0);
+        boolean isEqual = operations.isEqual(10, 10);
+        char upperCaseChar = operations.toUpperCase('a');
+        System.out.println("Sum: " + sum);
+        System.out.println("Product: " + product);
+        System.out.println("Equal: " + isEqual);
+        System.out.println("Upper Case: " + upperCaseChar);
+    }
+}
